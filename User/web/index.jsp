@@ -13,7 +13,7 @@
   <body>
   <div align="center">
     <h3>【信息管理】</h3>
-    <a href="${pageContext.request.contextPath}/user/show.jsp"> 信息展示 </a>
+    <a href="${pageContext.request.contextPath}/ShowServlet"> 信息展示 </a>
   </div>
   </body>
 </html>

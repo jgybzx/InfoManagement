@@ -1,0 +1,18 @@
+1.准备实体类
+
+2.编写dataUtils工具类,实现集合转换为json格式,进行文件读取,ObjectMapper.
+写:jackson.writeStringtoFile
+读:先从文件中读出Str,获取 集合元素类型,jackson.getTypeFactory().construcParametricType
+
+3.[使用@Test测试功能]
+
+4.编写Dao层,对数据进行读取,就是刚才的测试干的事情
+
+5,编写页面
+数据显示: 超链接转到showServlet,调用service查询方法,放到请求域中,请求转发,页面使用el标签循环展示,<c:if><c:forEach>
+
+新增: 超链接,转到 insert.jsp,填写内容,提交到addServlet,读取Map集合,封装成对象,调用service添加,请求转发到showServlet,
+
+删除:超链接 获取当前用户id,带参数转到 deleteServlet,获取出id,直接删除,响应重定向到showServlet,
+
+修改:超链接 获取当前用户id,带参数转到  showUpdateServlet,  调用service根据id获取数据,请求转发到uapdate.jsp,将数据 显示在页面上,修改之后提交到 UpdateServlet页面,调用service修改,然后请求转发到showServlet,
